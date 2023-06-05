@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:mi_urgencias_quiron_salud/Pages/Login.dart';
+import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:line_icons/line_icons.dart';
+import 'package:mi_urgencias_quiron_salud/Pages/configuracion.dart';
+import 'package:mi_urgencias_quiron_salud/Pages/miurgencias.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -9,112 +12,87 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  int selectedPageIndex = 0;
+  int _selectedIndex = 0;
+  static const TextStyle optionStyle =
+      TextStyle(fontSize: 30, fontWeight: FontWeight.w600);
+  static List<Widget> _widgetOptions = <Widget>[
+    MiUrgencias(),
+    Text(
+      'Likes',
+      style: optionStyle,
+    ),
+    Configuracion()
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        // TRY THIS: Try changing the color here to a specific color (to
-        // Colors.amber, perhaps?) and trigger a hot reload to see the AppBar
-        // change color while the other colors stay the same.
-        backgroundColor: Color(0xFF4B4E53),
-        // Here we take the value from the LoginPage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Center(
-          child: const Image(
-            width: 200,
-            image: NetworkImage(
-                'https://logotipoz.com/wp-content/uploads/2023/03/quironsalud.png'),
+        appBar: AppBar(
+          automaticallyImplyLeading: false,
+          // TRY THIS: Try changing the color here to a specific color (to
+          // Colors.amber, perhaps?) and trigger a hot reload to see the AppBar
+          // change color while the other colors stay the same.
+          backgroundColor: Color(0xFF4B4E53),
+          // Here we take the value from the LoginPage object that was created by
+          // the App.build method, and use it to set our appbar title.
+          title: Center(
+            child: const Image(
+              width: 200,
+              image: NetworkImage(
+                  'https://firebasestorage.googleapis.com/v0/b/mi-urgencias-quiron-salud.appspot.com/o/image%201.png?alt=media&token=62871bcd-ff4b-4957-9b61-82bff3e67fa6&_gl=1*xgy7pz*_ga*MzkzNTk4NzYyLjE2ODI5NzI2MDI.*_ga_CW55HF8NVT*MTY4NTg5MDYyNi4yLjEuMTY4NTg5MTE4NS4wLjAuMA..'),
+            ),
           ),
         ),
-      ),
-      body: [
-        Center(
-            child: Column(
-          children: [
-            Container(
-              height: 100,
-              margin: EdgeInsets.all(15),
-              decoration: BoxDecoration(
-                  color: Color(0xFF4B4E53),
-                  borderRadius: BorderRadius.all(Radius.circular(15))),
-            ),
-            SizedBox(height: 20),
-            Container(
-              height: 100,
-              margin: EdgeInsets.all(15),
-              decoration: BoxDecoration(
-                  color: Color(0xFFffffff),
-                  border: Border.all(
-                    width: 1,
-                    color: Color(0xFF4B4E53),
-                  ),
-                  borderRadius: BorderRadius.all(Radius.circular(15))),
-            ),
-            Container(
-              height: 50,
-              margin: EdgeInsets.all(15),
-              alignment: Alignment.centerLeft,
-              child: Text(
-                "Historial de visitas",
-                style: TextStyle(
-                    fontWeight: FontWeight.w900,
-                    fontStyle: FontStyle.normal,
-                    fontFamily: 'Open Sans',
-                    fontSize: 20),
-              ),
-            ),
-          ],
-        )),
-        Center(
-          child: Text(
-            'Relearn 👨‍🏫',
-          ),
+        body: Center(
+          child: _widgetOptions.elementAt(_selectedIndex),
         ),
-        Center(
-            child: Container(
-          child: ElevatedButton(
-            child: const Text('Open route'),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) =>
-                      const LoginPage(title: 'Flutter Demo Home Page'),
+        bottomNavigationBar: Container(
+            decoration: BoxDecoration(
+              color: Color(0xFF00A6A0),
+              boxShadow: [
+                BoxShadow(
+                  blurRadius: 20,
+                  color: Colors.black.withOpacity(.1),
+                )
+              ],
+            ),
+            child: SafeArea(
+              child: Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 15.0, vertical: 8),
+                child: GNav(
+                  rippleColor: Color(0xFF00C9C2),
+                  hoverColor: Color.fromARGB(255, 110, 231, 227),
+                  gap: 8,
+                  haptic: true, // haptic
+                  activeColor: Colors.white,
+                  iconSize: 24,
+                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                  duration: Duration(milliseconds: 400),
+                  tabBackgroundColor: Color(0xFF00C9C2),
+                  color: Colors.white,
+                  tabs: [
+                    GButton(
+                      icon: LineIcons.heartbeat,
+                      text: 'Mi urgencias',
+                    ),
+                    GButton(
+                      icon: LineIcons.hospital,
+                      text: 'Administración',
+                    ),
+                    GButton(
+                      icon: LineIcons.search,
+                      text: 'Configuración',
+                    ),
+                  ],
+                  selectedIndex: _selectedIndex,
+                  onTabChange: (index) {
+                    setState(() {
+                      _selectedIndex = index;
+                    });
+                  },
                 ),
-              );
-            },
-          ),
-        )),
-      ][selectedPageIndex],
-      bottomNavigationBar: NavigationBar(
-        selectedIndex: selectedPageIndex,
-        backgroundColor: Color(0xFF00A6A0),
-        indicatorColor: Color(0xFF00cabf),
-        onDestinationSelected: (int index) {
-          setState(() {
-            selectedPageIndex = index;
-          });
-        },
-        destinations: const <NavigationDestination>[
-          NavigationDestination(
-            selectedIcon: Icon(Icons.person),
-            icon: Icon(Icons.person_outline),
-            label: 'Mi urgencias',
-          ),
-          NavigationDestination(
-            selectedIcon: Icon(Icons.engineering),
-            icon: Icon(Icons.engineering_outlined),
-            label: 'Administración',
-          ),
-          NavigationDestination(
-            selectedIcon: Icon(Icons.bookmark),
-            icon: Icon(Icons.bookmark_border),
-            label: 'Configuración',
-          ),
-        ],
-      ),
-    );
+              ),
+            )));
   }
 }
