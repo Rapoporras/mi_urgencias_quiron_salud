@@ -65,6 +65,13 @@ class _LoginPageState extends State<LoginPage> {
                         Padding(
                           padding: EdgeInsets.all(15),
                           child: InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const Home()),
+                              );
+                            },
                             child: Container(
                                 width: MediaQuery.of(context).size.width,
                                 height: 40,
@@ -98,6 +105,12 @@ class _LoginPageState extends State<LoginPage> {
                 Padding(
                   padding: EdgeInsets.all(15),
                   child: InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const Home()),
+                      );
+                    },
                     child: Container(
                         width: MediaQuery.of(context).size.width,
                         height: 40,
