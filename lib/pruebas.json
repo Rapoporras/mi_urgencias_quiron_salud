@@ -1,0 +1,12 @@
+[
+  {
+    "id": 1,
+    "titulo": "Análisis de Sangre",
+    "pasos": [
+      { "orden": 0, "descripcion": "Pendiente Extracción" },
+      { "orden": 1, "descripcion": "LLegada a laboratorio" },
+      { "orden": 2, "descripcion": "Proceso de análisis" },
+      { "orden": 3, "descripcion": "Valoración médica" }
+    ]
+  }
+]
