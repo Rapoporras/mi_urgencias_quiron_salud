@@ -46,7 +46,7 @@ class _CajaDatosState extends State<CajaDatos> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Text('Ignacio Porras Ibáñez',
+                        const Text('Ignacio Porras Ibáñez',
                             style: TextStyle(
                                 color: Color(0xFFFFFFFF),
                                 fontWeight: FontWeight.w600,
