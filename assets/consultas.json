@@ -1,0 +1,290 @@
+[
+  {
+    "nombre": "Alejandro Rodríguez Enríquez",
+    "fecha_nacimiento": "20/12/1993",
+    "motivo": "Dolor torácico",
+    "fecha_consulta": "",
+    "nivel_consulta": "2",
+    "siguente_paso": {
+      "descripcion": "Análisis de Sangre - Proceso de análisis",
+      "estimado": "35min"
+    },
+    "descripcion_consulta": "Paciente refiere Dolor torácico centroopresivo",
+    "pruebas_clinicas": [
+      {
+        "orden": "0",
+        "titulo": "EKG",
+        "pasos": [
+          {
+            "orden": 0,
+            "descripcion": "Pendiente realización",
+            "complete": true
+          },
+          {
+            "orden": 1,
+            "descripcion": "Realizada",
+            "complete": true
+          }
+        ],
+        "complete": true,
+        "tiempo_espera_aprox": "10 min"
+      },
+      {
+        "orden": "1",
+        "titulo": "Análisis de Sangre",
+        "pasos": [
+          {
+            "orden": 0,
+            "descripcion": "Pendiente Extracción",
+            "complete": true
+          },
+          {
+            "orden": 1,
+            "descripcion": "LLegada a laboratorio",
+            "complete": true
+          },
+          {
+            "orden": 2,
+            "descripcion": "Proceso de análisis",
+            "complete": false
+          },
+          {
+            "orden": 3,
+            "descripcion": "Valoración médica",
+            "complete": false
+          }
+        ],
+        "complete": false,
+        "tiempo_espera_aprox": "60-90min"
+      },
+      {
+        "orden": "2",
+        "titulo": "Radiografía",
+        "pasos": [
+          {
+            "orden": 0,
+            "descripcion": "Pendiente Realización",
+            "complete": false
+          },
+          {
+            "orden": 1,
+            "descripcion": "Realizada",
+            "complete": false
+          }
+        ],
+        "complete": false,
+        "tiempo_espera_aprox": "20-30 min"
+      }
+    ],
+    "recomendaciones": "Cita preferente con Cardiología"
+  },
+  {
+    "nombre": "Fernando Fuentes Sanz",
+    "fecha_nacimiento": "21/12/1993",
+    "motivo": "Dolor Abdominal",
+    "fecha_consulta": "",
+    "siguente_paso": {
+      "descripcion": "Análisis orina - LLegada a laboratorio",
+      "estimado": "45min"
+    },
+    "nivel_consulta": "3",
+    "descripcion_consulta": "Dolor abdominal mesogástrico de 6 horas de evolución",
+    "pruebas_clinicas": [
+      {
+        "orden": "0",
+        "titulo": "Análisis de Sangre",
+        "pasos": [
+          {
+            "orden": 0,
+            "descripcion": "Pendiente Extracción",
+            "complete": true
+          },
+          {
+            "orden": 1,
+            "descripcion": "LLegada a laboratorio",
+            "complete": true
+          },
+          {
+            "orden": 2,
+            "descripcion": "Proceso de análisis",
+            "complete": true
+          },
+          {
+            "orden": 3,
+            "descripcion": "Valoración médica",
+            "complete": true
+          }
+        ],
+        "complete": true,
+        "tiempo_espera_aprox": "60-90min"
+      },
+      {
+        "orden": "1",
+        "titulo": "Análisis orina",
+        "pasos": [
+          {
+            "orden": 0,
+            "descripcion": "Recogida Muestra",
+            "complete": true
+          },
+          {
+            "orden": 1,
+            "descripcion": "LLegada a laboratorio",
+            "complete": false
+          },
+          {
+            "orden": 2,
+            "descripcion": "Proceso de análisis",
+            "complete": false
+          },
+          {
+            "orden": 3,
+            "descripcion": "Valoración médica",
+            "complete": false
+          }
+        ],
+        "complete": false,
+        "tiempo_espera_aprox": "60-90min"
+      },
+      {
+        "orden": "1",
+        "titulo": "TAC ABDOMINAL",
+        "pasos": [
+          {
+            "orden": 0,
+            "descripcion": "Verificación Ayuno y valores analíticos",
+            "complete": false
+          },
+          {
+            "orden": 1,
+            "descripcion": "Realización prueba",
+            "complete": false
+          },
+          {
+            "orden": 2,
+            "descripcion": "Informe por radiológo de guardia ",
+            "complete": false
+          }
+        ],
+        "complete": false,
+        "tiempo_espera_aprox": ""
+      }
+    ],
+    "recomendaciones": "Dieta Blanda y de protección gástrica, Cita con digestivo"
+  },
+  {
+    "nombre": "Jordi Corral",
+    "fecha_nacimiento": "15/05/1996",
+    "motivo": "Esguince Tobillo",
+    "fecha_consulta": "05/06/2023",
+    "nivel_consulta": "4",
+    "descripcion_consulta": "Paciente refiere Inflamación pie/tobillo tras golpe realizando actividad deportiva",
+    "pruebas_clinicas": [
+      {
+        "orden": "0",
+        "titulo": "Radiografía",
+        "pasos": [
+          {
+            "orden": 0,
+            "descripcion": "Pendiente Realización",
+            "complete": true
+          },
+          {
+            "orden": 1,
+            "descripcion": "Realizada",
+            "complete": true
+          }
+        ],
+        "complete": true,
+        "tiempo_espera_aprox": "20/30 min"
+      }
+    ],
+    "recomendaciones": "Frío local, tobillera y reposo "
+  },
+  {
+    "nombre": "Francisco Rojas Mateos",
+    "fecha_nacimiento": "06/06/1993",
+    "motivo": "Odinofagia",
+    "fecha_consulta": "06/06/2023",
+    "nivel_consulta": "5",
+    "descripcion_consulta": "Paciente refiere dolor de garganta y tos de dos semanas de evolución",
+    "pruebas_clinicas": [
+      {
+        "orden": "0",
+        "titulo": "Visita Médica",
+        "pasos": [
+          {
+            "orden": 0,
+            "descripcion": "Pendiente Realización",
+            "complete": true
+          },
+          {
+            "orden": 1,
+            "descripcion": "Realizada",
+            "complete": true
+          }
+        ],
+        "complete": true,
+        "tiempo_espera_aprox": "~ 60 min"
+      }
+    ],
+    "recomendaciones": ""
+  },
+  {
+    "nombre": "Angela Julia",
+    "fecha_nacimiento": "20/01/1993",
+    "motivo": "Disuria",
+    "fecha_consulta": "11/06/2023",
+    "nivel_consulta": "4",
+    "descripcion_consulta": "Paciente refiere molestia urinaria de 2 horas de evolución ",
+    "pruebas_clinicas": [
+      {
+        "orden": "0",
+        "titulo": "Análisis orina",
+        "pasos": [
+          {
+            "orden": 0,
+            "descripcion": "Recogida Muestra",
+            "complete": true
+          },
+          {
+            "orden": 1,
+            "descripcion": "LLegada a laboratorio",
+            "complete": true
+          },
+          {
+            "orden": 2,
+            "descripcion": "Proceso de análisis",
+            "complete": true
+          },
+          {
+            "orden": 3,
+            "descripcion": "Valoración médica",
+            "complete": true
+          }
+        ],
+        "tiempo_espera_aprox": "30 minutos",
+        "complete": true
+      },
+      {
+        "orden": "1",
+        "titulo": "Visita Médica",
+        "pasos": [
+          {
+            "orden": 0,
+            "descripcion": "Pendiente Realización",
+            "complete": true
+          },
+          {
+            "orden": 1,
+            "descripcion": "Realizada",
+            "complete": true
+          }
+        ],
+        "complete": true,
+        "tiempo_espera_aprox": "40 minutos"
+      }
+    ],
+    "recomendaciones": "Cita preferente con Cardiología"
+  }
+]

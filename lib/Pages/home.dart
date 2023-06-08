@@ -15,14 +15,7 @@ class _HomeState extends State<Home> {
   int _selectedIndex = 0;
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.w600);
-  static List<Widget> _widgetOptions = <Widget>[
-    MiUrgencias(),
-    Text(
-      'Likes',
-      style: optionStyle,
-    ),
-    Configuracion()
-  ];
+  static List<Widget> _widgetOptions = <Widget>[MiUrgencias(), Configuracion()];
 
   @override
   Widget build(BuildContext context) {
@@ -32,11 +25,11 @@ class _HomeState extends State<Home> {
           // TRY THIS: Try changing the color here to a specific color (to
           // Colors.amber, perhaps?) and trigger a hot reload to see the AppBar
           // change color while the other colors stay the same.
-          backgroundColor: Color(0xFF4B4E53),
+          backgroundColor: const Color(0xFF4B4E53),
           // Here we take the value from the LoginPage object that was created by
           // the App.build method, and use it to set our appbar title.
-          title: Center(
-            child: const Image(
+          title: const Center(
+            child: Image(
               width: 200,
               image: NetworkImage(
                   'https://firebasestorage.googleapis.com/v0/b/mi-urgencias-quiron-salud.appspot.com/o/image%201.png?alt=media&token=62871bcd-ff4b-4957-9b61-82bff3e67fa6&_gl=1*xgy7pz*_ga*MzkzNTk4NzYyLjE2ODI5NzI2MDI.*_ga_CW55HF8NVT*MTY4NTg5MDYyNi4yLjEuMTY4NTg5MTE4NS4wLjAuMA..'),
@@ -61,24 +54,21 @@ class _HomeState extends State<Home> {
                 padding:
                     const EdgeInsets.symmetric(horizontal: 15.0, vertical: 8),
                 child: GNav(
-                  rippleColor: Color(0xFF00C9C2),
-                  hoverColor: Color.fromARGB(255, 110, 231, 227),
+                  rippleColor: const Color(0xFF00C9C2),
+                  hoverColor: const Color.fromARGB(255, 110, 231, 227),
                   gap: 8,
                   haptic: true, // haptic
                   activeColor: Colors.white,
                   iconSize: 24,
-                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
-                  duration: Duration(milliseconds: 400),
-                  tabBackgroundColor: Color(0xFF00C9C2),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                  duration: const Duration(milliseconds: 400),
+                  tabBackgroundColor: const Color(0xFF00C9C2),
                   color: Colors.white,
-                  tabs: [
+                  tabs: const [
                     GButton(
                       icon: LineIcons.heartbeat,
                       text: 'Mi urgencias',
-                    ),
-                    GButton(
-                      icon: LineIcons.hospital,
-                      text: 'Administración',
                     ),
                     GButton(
                       icon: LineIcons.search,

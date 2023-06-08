@@ -3,10 +3,104 @@
     "id": 1,
     "titulo": "Análisis de Sangre",
     "pasos": [
-      { "orden": 0, "descripcion": "Pendiente Extracción" },
-      { "orden": 1, "descripcion": "LLegada a laboratorio" },
-      { "orden": 2, "descripcion": "Proceso de análisis" },
-      { "orden": 3, "descripcion": "Valoración médica" }
+      {
+        "orden": 0,
+        "descripcion": "Pendiente Extracción"
+      },
+      {
+        "orden": 1,
+        "descripcion": "LLegada a laboratorio"
+      },
+      {
+        "orden": 2,
+        "descripcion": "Proceso de análisis"
+      },
+      {
+        "orden": 3,
+        "descripcion": "Valoración médica"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "titulo": "Análisis orina",
+    "pasos": [
+      {
+        "orden": 0,
+        "descripcion": "Recogida Muestra"
+      },
+      {
+        "orden": 1,
+        "descripcion": "LLegada a laboratorio"
+      },
+      {
+        "orden": 2,
+        "descripcion": "Proceso de análisis"
+      },
+      {
+        "orden": 3,
+        "descripcion": "Valoración médica"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "titulo": "Radiografía",
+    "pasos": [
+      {
+        "orden": 0,
+        "descripcion": "Pendiente Realización"
+      },
+      {
+        "orden": 1,
+        "descripcion": "Realizada"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "titulo": "EKG",
+    "pasos": [
+      {
+        "orden": 0,
+        "descripcion": "Pendiente realización"
+      },
+      {
+        "orden": 1,
+        "descripcion": "Realizada"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "titulo": "TAC ABDOMINAL",
+    "pasos": [
+      {
+        "orden": 0,
+        "descripcion": "Verificación Ayuno y valores analíticos"
+      },
+      {
+        "orden": 1,
+        "descripcion": "Realización prueba"
+      },
+      {
+        "orden": 2,
+        "descripcion": "Informe por radiológo de guardia "
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "titulo": "Visita Médica",
+    "pasos": [
+      {
+        "orden": 0,
+        "descripcion": "Pendiente Realización"
+      },
+      {
+        "orden": 1,
+        "descripcion": "Realizada"
+      }
     ]
   }
 ]

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mi_urgencias_quiron_salud/Pages/Login.dart';
+import 'package:mi_urgencias_quiron_salud/main.dart';
 
 class Configuracion extends StatefulWidget {
   const Configuracion({super.key});

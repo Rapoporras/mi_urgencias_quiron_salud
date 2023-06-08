@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mi_urgencias_quiron_salud/Models/Consultas.dart';
 import 'package:mi_urgencias_quiron_salud/Pages/urgencia.dart';
 
 class CajaUrgencia extends StatefulWidget {
@@ -6,9 +7,11 @@ class CajaUrgencia extends StatefulWidget {
       {super.key,
       required this.fecha,
       required this.alta,
-      required this.motivo});
+      required this.motivo,
+      required this.consulta});
 
   final String fecha, motivo;
+  final Consulta consulta;
   final bool alta;
   @override
   State<CajaUrgencia> createState() => _CajaUrgenciaState();
@@ -69,7 +72,10 @@ class _CajaUrgenciaState extends State<CajaUrgencia> {
               onTap: () => {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const Urgencia()),
+                  MaterialPageRoute(
+                      builder: (context) => Urgencia(
+                            consulta: widget.consulta,
+                          )),
                 )
               },
               child: widget.alta
