@@ -27,19 +27,29 @@ class _UrgenciaState extends State<Urgencia> {
     return Scaffold(
         appBar: AppBar(
           leading: BackButton(color: Colors.white),
+          centerTitle: true,
           // TRY THIS: Try changing the color here to a specific color (to
           // Colors.amber, perhaps?) and trigger a hot reload to see the AppBar
           // change color while the other colors stay the same.
           backgroundColor: Color(0xFF4B4E53),
           // Here we take the value from the LoginPage object that was created by
           // the App.build method, and use it to set our appbar title.
-          title: Center(
-            child: const Image(
-              width: 200,
-              image: NetworkImage(
-                  'https://firebasestorage.googleapis.com/v0/b/mi-urgencias-quiron-salud.appspot.com/o/image%201.png?alt=media&token=62871bcd-ff4b-4957-9b61-82bff3e67fa6&_gl=1*xgy7pz*_ga*MzkzNTk4NzYyLjE2ODI5NzI2MDI.*_ga_CW55HF8NVT*MTY4NTg5MDYyNi4yLjEuMTY4NTg5MTE4NS4wLjAuMA..'),
-            ),
+          title: const Image(
+            width: 200,
+            image: NetworkImage(
+                'https://firebasestorage.googleapis.com/v0/b/mi-urgencias-quiron-salud.appspot.com/o/image%201.png?alt=media&token=62871bcd-ff4b-4957-9b61-82bff3e67fa6&_gl=1*xgy7pz*_ga*MzkzNTk4NzYyLjE2ODI5NzI2MDI.*_ga_CW55HF8NVT*MTY4NTg5MDYyNi4yLjEuMTY4NTg5MTE4NS4wLjAuMA..'),
           ),
+          actions: <Widget>[
+            Padding(
+                padding: EdgeInsets.only(right: 20.0),
+                child: GestureDetector(
+                  onTap: () {},
+                  child: Icon(
+                    Icons.notifications_active,
+                    color: Colors.white,
+                  ),
+                )),
+          ],
         ),
         body: Padding(
           padding: EdgeInsets.all(10),
@@ -55,7 +65,11 @@ class _UrgenciaState extends State<Urgencia> {
                   padding: EdgeInsets.all(10),
                   child: Text(
                     "Notificaciones y tiempo de espera visita medica",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
+                      fontFamily: 'Open Sans',
+                    ),
                   )),
               Padding(
                 padding: EdgeInsets.all(10),
@@ -77,15 +91,19 @@ class _UrgenciaState extends State<Urgencia> {
                                     "Siguiente paso",
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.w300),
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.w300,
+                                      fontFamily: 'Open Sans',
+                                    ),
                                   ),
                                   Text(
                                     _consulta.siguentePaso!.descripcion,
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
-                                        fontSize: 18,
-                                        fontWeight: FontWeight.w500),
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.w500,
+                                      fontFamily: 'Open Sans',
+                                    ),
                                   ),
                                 ],
                               )),
@@ -103,8 +121,11 @@ class _UrgenciaState extends State<Urgencia> {
                               "Tiempo estimado: " +
                                   _consulta.siguentePaso!.estimado,
                               textAlign: TextAlign.center,
-                              style:
-                                  TextStyle(fontSize: 16, color: Colors.white),
+                              style: TextStyle(
+                                fontSize: 16,
+                                color: Colors.white,
+                                fontFamily: 'Open Sans',
+                              ),
                             ),
                           )
                         ],
@@ -113,38 +134,65 @@ class _UrgenciaState extends State<Urgencia> {
                         "Consulta en alta",
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                            fontWeight: FontWeight.normal, fontSize: 16),
+                          fontWeight: FontWeight.normal,
+                          fontSize: 16,
+                          fontFamily: 'Open Sans',
+                        ),
                       ),
               ),
               Padding(
                   padding: EdgeInsets.all(10),
                   child: Text(
                     "Pruebas clinicas",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
+                      fontFamily: 'Open Sans',
+                    ),
                   )),
               Steps(pruebas: _consulta.pruebasClinicas),
               SizedBox(
                 height: 15,
               ),
-              Padding(
-                  padding: EdgeInsets.all(10),
-                  child: Text(
-                    "Recomendaciones al alta",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-                  )),
-              Padding(
-                padding: EdgeInsets.all(10),
-                child: Text(
-                  _consulta.recomendaciones,
-                  textAlign: TextAlign.justify,
-                  style: TextStyle(fontWeight: FontWeight.normal, fontSize: 16),
-                ),
-              ),
+              _consulta.recomendaciones != ""
+                  ? Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Padding(
+                            padding: EdgeInsets.all(10),
+                            child: Text(
+                              "Recomendaciones al alta",
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20,
+                                fontFamily: 'Open Sans',
+                              ),
+                            )),
+                        Padding(
+                          padding: EdgeInsets.all(10),
+                          child: Text(
+                            _consulta.recomendaciones,
+                            textAlign: TextAlign.justify,
+                            style: TextStyle(
+                              fontWeight: FontWeight.normal,
+                              fontSize: 16,
+                              fontFamily: 'Open Sans',
+                            ),
+                          ),
+                        )
+                      ],
+                    )
+                  : Container(),
               Padding(
                   padding: EdgeInsets.all(10),
                   child: Text(
                     "Adminitrativo y consentimientos",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
+                      fontFamily: 'Open Sans',
+                    ),
                   )),
               Padding(
                   padding: EdgeInsets.all(10),
@@ -155,21 +203,32 @@ class _UrgenciaState extends State<Urgencia> {
                           LineIcons.pdfFile,
                           color: Color(0xffCA4A60),
                         ),
-                        title: Text('Consentimientos firmados'),
+                        title: Text(
+                          'Consentimientos firmados',
+                          style: TextStyle(
+                            fontFamily: 'Open Sans',
+                          ),
+                        ),
                       ),
                       ListTile(
                         leading: Icon(
                           LineIcons.pdfFile,
                           color: Color(0xffCA4A60),
                         ),
-                        title: Text('Receta Electrónica'),
+                        title: Text('Receta Electrónica',
+                            style: TextStyle(
+                              fontFamily: 'Open Sans',
+                            )),
                       ),
                       ListTile(
                         leading: Icon(
                           LineIcons.pdfFile,
                           color: Color(0xffCA4A60),
                         ),
-                        title: Text('Ley de protección de datos'),
+                        title: Text('Ley de protección de datos',
+                            style: TextStyle(
+                              fontFamily: 'Open Sans',
+                            )),
                       ),
                     ],
                   )),
@@ -242,7 +301,8 @@ class _StepListState extends State<StepList> {
     return pasos.map<StepperData>((Paso step) {
       return StepperData(
           title: StepperText(step.descripcion,
-              textStyle: const TextStyle(color: Colors.grey)),
+              textStyle:
+                  const TextStyle(fontFamily: 'Open Sans', color: Colors.grey)),
           iconWidget: Container(
             padding: const EdgeInsets.all(8),
             decoration: BoxDecoration(
@@ -275,11 +335,17 @@ class _StepListState extends State<StepList> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Text(step.title),
+                  Text(
+                    step.title,
+                    style: TextStyle(
+                      fontFamily: 'Open Sans',
+                    ),
+                  ),
                   Text(
                     step.tiempo,
                     style: TextStyle(
                         color: Colors.grey,
+                        fontFamily: 'Open Sans',
                         fontWeight: FontWeight.w300,
                         fontSize: 14),
                   )

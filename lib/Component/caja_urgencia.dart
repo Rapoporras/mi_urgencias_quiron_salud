@@ -55,7 +55,7 @@ class _CajaUrgenciaState extends State<CajaUrgencia> {
                             color: Color(0xFF4B4E53),
                             fontWeight: FontWeight.w300,
                             fontStyle: FontStyle.italic,
-                            // fontFamily: 'Open Sans',
+                            fontFamily: 'Open Sans',
                             fontSize: 14),
                       ),
                       Text('${widget.motivo}',
@@ -93,7 +93,11 @@ class _CajaUrgenciaState extends State<CajaUrgencia> {
                             Text(
                           "ALTA",
                           textAlign: TextAlign.center,
-                          style: TextStyle(color: Colors.white, fontSize: 10),
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 10,
+                            fontFamily: 'Open Sans',
+                          ),
                         ),
                       ),
                     )
@@ -111,7 +115,11 @@ class _CajaUrgenciaState extends State<CajaUrgencia> {
                             Text(
                           "VER MÁS",
                           textAlign: TextAlign.center,
-                          style: TextStyle(color: Colors.white, fontSize: 10),
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 10,
+                            fontFamily: 'Open Sans',
+                          ),
                         ),
                       ),
                     ),

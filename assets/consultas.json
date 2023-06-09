@@ -13,7 +13,7 @@
     "pruebas_clinicas": [
       {
         "orden": "0",
-        "titulo": "EKG",
+        "titulo": "Electrocardiograma",
         "pasos": [
           {
             "orden": 0,
@@ -58,6 +58,23 @@
         "tiempo_espera_aprox": "60-90min"
       },
       {
+        "orden": "2",
+        "titulo": "Radiografía",
+        "pasos": [
+          {
+            "orden": 0,
+            "descripcion": "Pendiente Realización",
+            "complete": false
+          },
+          {
+            "orden": 1,
+            "descripcion": "Realizada",
+            "complete": false
+          }
+        ],
+        "complete": false,
+        "tiempo_espera_aprox": "20-30 min"
+      },{
         "orden": "2",
         "titulo": "Radiografía",
         "pasos": [
@@ -167,7 +184,7 @@
           }
         ],
         "complete": false,
-        "tiempo_espera_aprox": ""
+        "tiempo_espera_aprox": "75min"
       }
     ],
     "recomendaciones": "Dieta Blanda y de protección gástrica, Cita con digestivo"

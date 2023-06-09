@@ -73,7 +73,12 @@ class _MiUrgenciasState extends State<MiUrgencias> {
                       consulta: _consultas[index],
                     )
                   : Center(
-                      child: Text("No hay ninguna urgencia activa"),
+                      child: Text(
+                        "No hay ninguna urgencia activa",
+                        style: TextStyle(
+                          fontFamily: 'Open Sans',
+                        ),
+                      ),
                     ),
               Container(
                 height: 30,
@@ -96,7 +101,12 @@ class _MiUrgenciasState extends State<MiUrgencias> {
                       consulta: _consultas[index],
                     )
                   : Center(
-                      child: Text("No hay consultas anteriores"),
+                      child: Text(
+                        "No hay consultas anteriores",
+                        style: TextStyle(
+                          fontFamily: 'Open Sans',
+                        ),
+                      ),
                     ),
             ],
           )

@@ -92,7 +92,7 @@ class _CajaDatosState extends State<CajaDatos> {
                               color: Color(0xFFFFFFFF),
                               fontWeight: FontWeight.w300,
                               fontStyle: FontStyle.italic,
-                              // fontFamily: 'Open Sans',
+                              fontFamily: 'Open Sans',
                               fontSize: 14),
                         ),
                         Text(
@@ -102,7 +102,7 @@ class _CajaDatosState extends State<CajaDatos> {
                               color: Color(0xFFFFFFFF),
                               fontWeight: FontWeight.w300,
                               fontStyle: FontStyle.italic,
-                              // fontFamily: 'Open Sans',
+                              fontFamily: 'Open Sans',
                               fontSize: 14),
                         ),
                       ],

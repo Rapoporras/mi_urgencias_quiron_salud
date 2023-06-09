@@ -28,11 +28,6 @@ class MyApp extends StatelessWidget {
 
         // Define the default `TextTheme`. Use this to specify the default
         // text styling for headlines, titles, bodies of text, and more.
-        textTheme: const TextTheme(
-          displayLarge: TextStyle(fontSize: 72.0, fontWeight: FontWeight.bold),
-          titleLarge: TextStyle(fontSize: 36.0, fontStyle: FontStyle.italic),
-          bodyMedium: TextStyle(fontSize: 14.0, fontFamily: 'Hind'),
-        ),
       ),
       home: const LoginPage(title: 'Flutter Demo Home Page'),
     );
@@ -104,8 +99,9 @@ class _LoginPageState extends State<LoginPage> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          "Introduzca el código para obtener información de seguimiento del paciente en urgencias",
+                          "Introduzca el código para obtener información de seguimiento del paciente en urgencias.",
                           textAlign: TextAlign.center,
+                          style: TextStyle(fontFamily: "Open Sans"),
                         ),
                         TextField(
                           decoration: InputDecoration(
@@ -114,7 +110,9 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                         CheckboxListTile(
                           title: Text(
-                              "He leído y acepto las Políticas de privacidad"),
+                            "He leído y acepto las Políticas de privacidad",
+                            style: TextStyle(fontFamily: "Open Sans"),
+                          ),
                           value: checkedValue,
                           onChanged: (newValue) {
                             setState(() {
@@ -144,11 +142,20 @@ class _LoginPageState extends State<LoginPage> {
                                 child: Center(
                                   child: Text(
                                     "Entrar como invitado",
-                                    style: TextStyle(color: Colors.white),
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontFamily: "Open Sans"),
                                   ),
                                 )),
                           ),
-                        )
+                        ),
+                        Text(
+                          "Este código sólo es personal e intransferible.Sólo si usted desea, podrá hacerlo.",
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                              fontWeight: FontWeight.w300,
+                              fontFamily: "Open Sans"),
+                        ),
                       ],
                     ),
                   ))),
@@ -165,18 +172,19 @@ class _LoginPageState extends State<LoginPage> {
                 Text(
                   "Si dispones de una cuenta en Quirón Salud puedes iniciar sesión con tus datos",
                   textAlign: TextAlign.center,
-                  style: TextStyle(color: Colors.white),
+                  style:
+                      TextStyle(color: Colors.white, fontFamily: "Open Sans"),
                 ),
                 Padding(
                   padding: EdgeInsets.all(15),
                   child: InkWell(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => const Home()),
-                      );
-                    },
-                    child: Container(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const Home()),
+                        );
+                      },
+                      child: Container(
                         width: MediaQuery.of(context).size.width,
                         height: 40,
                         decoration: BoxDecoration(
@@ -186,24 +194,15 @@ class _LoginPageState extends State<LoginPage> {
                           child: Text(
                             "Entrar como invitado",
                             style: TextStyle(
-                              color: Color(0xFF00A6A0),
-                            ),
+                                color: Color(0xFF00A6A0),
+                                fontFamily: "Open Sans"),
                           ),
-                        )),
-                  ),
-                )
+                        ),
+                      )),
+                ),
               ],
             ),
           )
-          // ElevatedButton(
-          //   child: const Text('Open route'),
-          //   onPressed: () {
-          //     Navigator.push(
-          //       context,
-          //       MaterialPageRoute(builder: (context) => const Home()),
-          //     );
-          //   },
-          // ),
         ],
       ),
     );
