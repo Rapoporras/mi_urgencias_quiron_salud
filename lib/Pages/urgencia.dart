@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:line_icons/line_icons.dart';
@@ -6,6 +8,7 @@ import 'package:mi_urgencias_quiron_salud/Models/Consultas.dart';
 import 'package:mi_urgencias_quiron_salud/Pages/configuracion.dart';
 import 'package:mi_urgencias_quiron_salud/Pages/miurgencias.dart';
 import 'package:another_stepper/another_stepper.dart';
+import 'package:quickalert/quickalert.dart';
 
 class Urgencia extends StatefulWidget {
   const Urgencia({super.key, required this.consulta});
@@ -20,6 +23,45 @@ class _UrgenciaState extends State<Urgencia> {
   void initState() {
     super.initState();
     _consulta = widget.consulta;
+  }
+
+  void generarOpcionAleatoria() {
+    setState(() {
+      // Genera un número aleatorio entre 0 y 1
+      var random = Random().nextInt(2);
+
+      if (random == 0) {
+        QuickAlert.show(
+            context: context,
+            type: QuickAlertType.info,
+            title: 'Visita a Consulta',
+            text: 'Puede acudir a la visita con el Médico. Consulta 3',
+            backgroundColor: Color(0xFFFFFFFF),
+            titleColor: Color(0xFF4B4E53),
+            textColor: Color(0xFF4B4E53),
+            confirmBtnColor: Color(0xFF00A6A0),
+            confirmBtnTextStyle: TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.w600,
+                fontFamily: "Open Sans",
+                fontSize: 18.0));
+      } else {
+        QuickAlert.show(
+            context: context,
+            type: QuickAlertType.success,
+            title: 'Prueba Completada',
+            text: 'Su Analisis de Sangre se ha completado.',
+            backgroundColor: Color(0xFFFFFFFF),
+            titleColor: Color(0xFF4B4E53),
+            textColor: Color(0xFF4B4E53),
+            confirmBtnColor: Color(0xFF00A6A0),
+            confirmBtnTextStyle: TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.w600,
+                fontFamily: "Open Sans",
+                fontSize: 18.0));
+      }
+    });
   }
 
   @override
@@ -43,7 +85,9 @@ class _UrgenciaState extends State<Urgencia> {
             Padding(
                 padding: EdgeInsets.only(right: 20.0),
                 child: GestureDetector(
-                  onTap: () {},
+                  onTap: () {
+                    generarOpcionAleatoria();
+                  },
                   child: Icon(
                     Icons.notifications_active,
                     color: Colors.white,

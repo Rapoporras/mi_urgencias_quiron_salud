@@ -29,7 +29,7 @@ class _MiUrgenciasState extends State<MiUrgencias> {
     setState(() {
       //_items = data["items"];
       _consultas = consulta;
-      index = obtenerNumeroAleatorio(_consultas);
+      //index = obtenerNumeroAleatorio(_consultas);
     });
   }
 
@@ -93,12 +93,42 @@ class _MiUrgenciasState extends State<MiUrgencias> {
                       fontSize: 20),
                 ),
               ),
-              _consultas[index].fechaConsulta != ""
+              _consultas[index + 3].fechaConsulta != ""
                   ? CajaUrgencia(
-                      fecha: _consultas[index].fechaConsulta,
-                      alta: false,
-                      motivo: _consultas[index].motivo,
-                      consulta: _consultas[index],
+                      fecha: _consultas[index + 3].fechaConsulta,
+                      alta: true,
+                      motivo: _consultas[index + 3].motivo,
+                      consulta: _consultas[index + 3],
+                    )
+                  : Center(
+                      child: Text(
+                        "No hay consultas anteriores",
+                        style: TextStyle(
+                          fontFamily: 'Open Sans',
+                        ),
+                      ),
+                    ),
+              _consultas[index + 4].fechaConsulta != ""
+                  ? CajaUrgencia(
+                      fecha: _consultas[index + 4].fechaConsulta,
+                      alta: true,
+                      motivo: _consultas[index + 4].motivo,
+                      consulta: _consultas[index + 4],
+                    )
+                  : Center(
+                      child: Text(
+                        "No hay consultas anteriores",
+                        style: TextStyle(
+                          fontFamily: 'Open Sans',
+                        ),
+                      ),
+                    ),
+              _consultas[index + 2].fechaConsulta != ""
+                  ? CajaUrgencia(
+                      fecha: _consultas[index + 2].fechaConsulta,
+                      alta: true,
+                      motivo: _consultas[index + 2].motivo,
+                      consulta: _consultas[index + 2],
                     )
                   : Center(
                       child: Text(
