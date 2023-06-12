@@ -47,6 +47,7 @@ dependencies:
   hive: ^2.2.3
   quickalert: ^1.0.1
   google_fonts: ^5.0.0
+  flutter_launcher_icons: ^0.13.1
 
 dev_dependencies:
   flutter_test:
@@ -75,6 +76,7 @@ flutter:
     - assets/consultas.json
     - assets/logo.png
     - google_fonts/
+    - assets/logomini.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
