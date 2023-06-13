@@ -74,7 +74,8 @@
         ],
         "complete": false,
         "tiempo_espera_aprox": "20-30 min"
-      },{
+      },
+      {
         "orden": "2",
         "titulo": "Radiografía",
         "pasos": [
@@ -302,6 +303,6 @@
         "tiempo_espera_aprox": "40 minutos"
       }
     ],
-    "recomendaciones": "Cita preferente con Cardiología"
+    "recomendaciones": "Cita médica de seguimiento"
   }
 ]

@@ -1,12 +1,9 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:mi_urgencias_quiron_salud/Component/caja_datos.dart';
 import 'package:mi_urgencias_quiron_salud/Models/Consultas.dart';
-import 'package:mi_urgencias_quiron_salud/Pages/configuracion.dart';
-import 'package:mi_urgencias_quiron_salud/Pages/miurgencias.dart';
 import 'package:another_stepper/another_stepper.dart';
 import 'package:quickalert/quickalert.dart';
 

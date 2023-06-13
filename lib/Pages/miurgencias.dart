@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:mi_urgencias_quiron_salud/Component/caja_datos.dart';
 import 'package:mi_urgencias_quiron_salud/Component/caja_urgencia.dart';
-import 'dart:convert';
 
 import 'package:flutter/services.dart';
 
@@ -24,7 +23,7 @@ class _MiUrgenciasState extends State<MiUrgencias> {
   Future<void> readJson() async {
     final String response =
         await rootBundle.loadString('assets/consultas.json');
-    final data = await json.decode(response);
+
     final consulta = consultaFromJson(response);
     setState(() {
       //_items = data["items"];
